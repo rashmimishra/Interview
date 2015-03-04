@@ -1,5 +1,8 @@
 /*This Program is written to illustrate dynamic programming approach
- to solve the problems. */
+ to solve the max coin problem which are placed on the matrix or 2d 
+ array.The time complexity of this approach is O(rc) and space 
+ complexity of this solution is also O(rc) where r is no of rows 
+ and c is no of columns.*/
 
  #include<cstdio>
  #include<algorithm>
@@ -30,6 +33,7 @@
 
    	}
    }
+   /*
      for (int i=1;i<=ROWS;++i)
    {
    	for (int j=1;j<=COLS;++j)
@@ -37,8 +41,7 @@
    		printf("%d\n",mem[i][j]);
    	}
    	printf("\n");
-   }
-
+   }*/
    return mem[ROWS][COLS];
 }
 
