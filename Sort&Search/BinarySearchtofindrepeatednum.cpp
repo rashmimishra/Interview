@@ -1,4 +1,4 @@
-/*This Program is written to illustrate to find the max index and min idex if a given 
+/*This Program is written to illustrate to find the max index and min index if a given 
 number in a sorted array using binary search.The time complexity of this program is 
 O(logn) and space complexity is O(1). */
 
@@ -17,6 +17,7 @@ while (low <= high)
   mid = low+(high-low)/2;
   if(arr[mid] == elem && arr[mid-1] != elem)
   {
+    //This is the minimum index.
     return mid;
   }
   else if(arr[mid]<elem)
@@ -45,6 +46,7 @@ while (low <= high)
   mid = low+(high-low)/2;
   if(arr[mid] == elem && arr[mid+1] != elem)
   {
+    // This is max index.
     return mid;
   }
   else if(arr[mid]<elem)
