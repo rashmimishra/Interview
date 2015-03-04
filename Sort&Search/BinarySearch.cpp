@@ -29,6 +29,8 @@ while (low <= high)
   }
 
 }
+/* If we have reached here, then it means that given element was not found
+  in the array hence returning -1. */
 if (high<low)
   {
     printf("Element was not found in the array.\n");
