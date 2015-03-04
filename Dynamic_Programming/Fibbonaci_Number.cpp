@@ -1,5 +1,5 @@
 /* This program is written to illustrate Dynamic programming approach
-compute the fibbonaci number. The time complexity of this program is 
+to compute the fibbonaci number. The time complexity of this program is 
 O(n) and space complexity is O(n) */
 
 #include<cstdio>
