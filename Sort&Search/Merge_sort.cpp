@@ -1,7 +1,7 @@
 /* This program is written to illustrate merge sort for an interger array. The idea behind
 merge sort is to keep dividing the array into subarrays till we are left with subarrays with 
-one element as single element is always sorted and the merge it the correct order. The time 
-complexity for merge sort is O(nlogn)and space complexity is O(n). Merge sort is a stable sort. */
+one element as single element is always sorted and then merge it in the correct order. The time 
+complexity for merge sort is O(nlogn) and space complexity is O(n). Merge sort is a stable sort. */
 
 #include<cstdio>
 #include<cstdlib>
@@ -24,18 +24,19 @@ void merge(int arr[], int low, int mid, int high)
     } 
 
     for (j =0;j<right;j++)
-	{
+	 {
 		right_arr[j] = arr[mid+1+j];
-	}
+	 }
 
 	//Start merging.
 
-	i =0 ;
-  j =0; 
-  k = low;
+	i=0;
+  j=0; 
+  k=low;
 
    while (i <left && j<right)
    {
+     //Equal is required to make it stable sort.
       if(left_arr[i] <= right_arr[j])
       {
       	arr[k] = left_arr[i];
@@ -92,15 +93,15 @@ int main()
 	scanf("%d", &n);
 	int arr[n];
   for (int i=0;i<n; i++)
-    {
+  {
      scanf ("%d", &arr[i]);
-    }
+  }
   merge_sort(arr,0,n-1);
-//printing the sorted array
+  //printing the sorted array
   for (int i=0;i<n; i++)
-    {
+  {
      printf ("%d\n", arr[i]);
-    }
+  }
 
    return 0; 
 }
