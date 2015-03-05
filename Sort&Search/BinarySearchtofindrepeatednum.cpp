@@ -7,62 +7,40 @@ O(logn) and space complexity is O(1). */
 
 using namespace std;
 
-int first(int arr[], int size, int elem)
+int first(int arr[], int low, int high, int elem, int n)
 {
-int low = 0;
-int high = size-1;
 int mid;
 while (low <= high)
-{
-  mid = low+(high-low)/2;
-  if(arr[mid] == elem && arr[mid-1] != elem)
   {
-    //This is the minimum index.
-    return mid;
+    mid = low+(high-low)/2;
+    if((mid == 0 ||arr[mid-1] < elem) && arr[mid] == elem)
+      //This is the minimum index.
+      return mid;
+    else if(arr[mid]<elem)
+  	 return first(arr,(mid+1),high,elem,n);
+    else
+  	 return first(arr,low,(mid-1),elem,n);
   }
-  else if(arr[mid]<elem)
-  {
-  	low = mid+1;
-  }
-  else
-  {
-  	high = mid-1;
-  }
-
-}
-if (high<low)
-  {
-    return -1;
-  }
+ return -1;
 }
 
-int last(int arr[], int size, int elem)
+int last(int arr[], int low, int high, int elem, int n)
 {
-int low = 0;
-int high = size-1;
 int mid;
 while (low <= high)
-{
-  mid = low+(high-low)/2;
-  if(arr[mid] == elem && arr[mid+1] != elem)
   {
-    // This is max index.
-    return mid;
-  }
-  else if(arr[mid]<elem)
-  {
-    low = mid+1;
-  }
-  else
-  {
-    high = mid-1;
-  }
-
-}
-if (high<low)
-  {
-    return -1;
-  }
+    mid = low+(high-low)/2;
+    if((mid == n-1 || arr[mid+1]> elem )&& arr[mid] == elem)
+    {
+      // This is max index.
+      return mid;
+    }
+    else if(arr[mid]<elem)
+      return last(arr,(mid+1),high,elem,n);
+    else
+      return last(arr,low,(mid+1),elem,n);
+  } 
+return -1;
 }
 
 int count(int arr[], int size, int elem)
