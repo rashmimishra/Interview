@@ -1,0 +1,16 @@
+                                RAID(Redundant Array of Independent Disks)
+							 Reliability,Availability,Performance and Capacity
+
+RAID 0 consists of stripping without parity or mirroring.
+
+RAID 1 consists of mirroring, without parity or stripping. 
+
+RAID 2 consists of bit level stripping and dedicated Hamming code parity.
+
+RAID 3 consists of byte level stripping and dedicated parity.
+
+RAID 4 consists of block level stripping and dedicated parity.
+
+RAID 5 consists of block level stripping and distributed parity.
+
+RAID 6 consists of block level stripping and double distributed parity.					
