@@ -1,0 +1,35 @@
+1)Use NOT EXISTS instead of NOT IN
+
+NOT EXISTS adds a limiting condition to queries that can reduce the number of full table scans.
+
+2)Use NOT EXISTS or NOT IN with hints instead of MINUS
+
+use of NOT EXISTS and NOTIN(with hints)  can enable the advantages of indexes , thus reducing the number of full table scan that a clause may require.
+Hash_antijoin doesn't require sort. 
+
+3) Use Operators differently to enable Indexes.
+
+SELECT account_name, trans_date, amount
+FROM transaction
+WHERE amount + 3000 < 5000
+
+The same query can be rewritten in the better way 
+
+SELECT account_name, trans_date, amount
+FROM transaction
+WHERE amount < 2000
+
+4) Don't use TRUNC on indexed columns 
+
+It causes oracle not to use indexes and will go for full table scan.
+
+5)Do not use columns on both sides of operator 
+
+When an indexed column appears on both sides of an operator, the index for that column is disabled.
+
+6)Use WHERE in place of HAVING 
+
+The HAVING clause limits rows collected by a GROUP BY clause only after they have been aggregated. Whenever possible, it is better to limit the 
+number of rows retrieved before they are merged and sorted into an aggregation. Using WHERE in place of HAVING eliminates rows before they are 
+added to the aggregation.
+
