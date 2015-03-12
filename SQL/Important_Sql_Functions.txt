@@ -1,0 +1,37 @@
+                                            Important SQL Functions
+							
+	A) Single Row Functions
+	   a) Numeric Functions 
+	      1)ABS - absolute value
+		  2)CEIL - smallest integer greater or equal to n.
+		  3)FLOOR - smallest integer less or equal to n.
+		  4)MOD - remainder of n2/n1.
+		  
+	   b) Character Functions
+	       1)CONCAT - returns char1 concatenated with char2.
+		   2)INITCAP - returns char with first alphabet in caps.
+		   3)LPAD - returns expression of length n with left padded with expr2.
+		   4)LTRIM - returns the string after removing the pattern from the left side of the string.
+		   5)REGEXP_REPLACE - returns after replacing the pattern if its found in the string.
+		   6)REGEXP_SUBSTR - returns the matched pattern if found in the string.
+		   7)REPLACE - returns the string after replacing each searched string with replaced string.
+		   8)SUBSTR - returns the part of string beginning from the position till the length specified.
+	 
+	  c)  Character functions returning  number values
+	       1)INSTR - returns the location of sub string starting from given character position of the occurrence.
+		   2)LENGTH - returns the length of the string.
+		   3)REGEXP_INSTR- search for a pattern in the given string.
+																	  
+       d)  Date Time Functions 
+           1)CURRENT_DATE - returns the current date in session time zone.
+		   2)CURRENT_TIMESTAMP - returns the current date and time in the session time zone.
+		   3)TO_TIMESTAMP - converts the char, varachar2, nvarchar2, nchar to TIMESTAMP data type.
+        
+       e) Comparison Functions
+		   1) GREATEST - returns the greatest element from the list.
+		   2) LEAST- returns the least element from the list.
+		   
+	   f) Conversion Functions
+	      1) TO_CHAR
+		  2) TO_DATE
+		  3) TO_NUMBER
