@@ -19,30 +19,19 @@ int max(int a, int b)
 
 int max_product_sub_array(int *arr, int n)
 {
-	int max_ending = 1;
-	int min_ending = 1;
-	int max_product = 1;
-	for (int i=0;i<n;++i)
-	 	{
-	 		if (arr[i] > 0)
-	 		{
-	 			max_ending = max_ending * arr[i];
-	 			min_ending = min(min_ending * arr[i], 1);
-	 		}
-	 		else if (arr[i] == 0)
-	 		{
-	 			max_ending = 1;
-	 			min_ending = 1;
-	 		}
-	 		else
-	 		{
-	 			int temp = max_ending;
-	 			max_ending = max(min_ending *arr[i], 1);
-	 			min_ending = temp * arr[i];
-	 		}
-	 		if (max_product < max_ending)
-	 			max_product = max_ending;
-	 	}
+	int max_ending = arr[0];
+	int min_ending = arr[0];
+	int max_product = arr[0];
+	for (int i =1;i<n;++i)
+	{
+		int tmpmax = max_ending;
+		int tmpmin = min_ending;
+		max_ending = max(max(tmpmax*arr[i], tmpmin*arr[i]), arr[i]);
+		min_ending = min(min(tmpmax*arr[i], tmpmin*arr[i]), arr[i]);
+		max_product = max(max_product,max_ending);
+
+	}
+
 return max_product;
 
 }
