@@ -25,7 +25,9 @@ public:
 		return true;
 	}
 
-	// time complexity of this solution is O(n) but this solution would need extra space.
+	/* time complexity of this solution is O(n) but this solution would
+	 need extra space. This solution employs Dynamic Programming approach
+	 to solve this problem.*/
 
 	bool isunique_with_ds(string str)
 	{
