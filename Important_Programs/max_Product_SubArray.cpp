@@ -1,8 +1,6 @@
 /* This program is written to find out the maximum product sub array from a 
 given array of integers. We need to employ dynamic programming approach to 
-solve this problem. The time complexity of this program is O(n). This program 
-will not work if all the elements in array is 0. Return 0 incase all the elements 
-are 0 else call max_product_sub_array function.*/
+solve this problem. The time complexity of this program is O(n). */
 
 #include<cstdio>
 using namespace std;
