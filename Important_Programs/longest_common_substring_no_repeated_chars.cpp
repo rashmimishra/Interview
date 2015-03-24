@@ -15,7 +15,8 @@ int longest_unique_substr(char *str)
 	//creating the aux array of size no_of_chars
 	int * visited = (int *) malloc(sizeof (int)* NO_OF_CHARS);
 	//initialising all elements of visited array to -1.
-	memset(visited, -1, NO_OF_CHARS);
+	for (int i =0;i<NO_OF_CHARS;++i)
+		visited[i] = -1;
 	int current_length = 1;
 	int max_length = 1;
 	int prev_index;
