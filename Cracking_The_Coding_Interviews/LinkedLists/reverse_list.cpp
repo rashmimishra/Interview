@@ -11,44 +11,7 @@ public:
 	node* next;
 	node(int d): data(d), next(NULL){}
 };
-
-//function to reverse the list
-void reverse_list(node* head)
-{
-	node* prev;
-	node* current;
-	node* temp;
-	prev = NULL;
-	current = head->next;
-	while (current != NULL)
-	{
-		temp = current->next;
-		current->next = prev;
-		prev = current;
-		current = temp;
-	}
-	head->next = prev;
-}
-
-//creating the list
-
-node* createlist(int arr[], int n)
-{
-	node* head = new node(0);
-	node* start = head;
-	for (int i =0 ;i<n;++i)
-	{
-		node* second = new node (arr[i]);
-		start->next = second;
-		start = second;
-	}
-	return head;
-}
-
-
-// printing the list 
-
-void printlist (node* head)
+ void printlist (node* head)
 {
 	if (head == NULL)
 		cout<<"The list is empty."<<endl;
@@ -59,6 +22,40 @@ void printlist (node* head)
 	}
 	cout<<endl;
 }
+//function to reverse the list
+void reverse_list(node* header)
+{
+	node* prev;
+	node* current;
+	node* temp;
+	prev = NULL;
+	//printlist(header);
+	current = header->next;
+	while (current != NULL)
+	{
+		temp = current->next;
+		current->next = prev;
+		prev = current;
+		current = temp;
+	}
+	header->next = prev;
+}
+
+//creating the list
+
+node* createlist(int arr[], int n)
+{
+	node* head = new node(arr[0]);
+	node* start = head;
+	for (int i =0 ;i<n;++i)
+	{
+		node* second = new node (arr[i]);
+		start->next = second;
+		start = second;
+	}
+	return head;
+}
+
 
 
 int main()
