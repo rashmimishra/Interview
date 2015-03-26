@@ -36,80 +36,34 @@ node* sumlist( node* l1, node* l2)
 {
 	// if the numbers sum more than 9 then we need to have carry as well
 	int carry =0 ;
-	node* p = l1;
-	node* q = l2;
-	while (p && q)
-	{
-		int s = p->data+q->data+carry;
-		carry = s/10;
-		p->data = s%10;
-		q->data = s%10;
-	
-		if (p->next && q->next) 
-		{
-			p = p->next;
-			q = q->next;
+	node *res = NULL;
+	node *prev ;
+	node *temp = res;
+	int sum;
 
-		}
-		
+	while (l1 != NULL || l2 != NULL)
+	{
+	 sum = carry + (l1 ? l1->data : 0) +(l2 ? l2->data : 0);
+	 cout<< sum<<endl;
+
+		carry = sum/10;
+		sum = sum%10;
+		temp = new node(sum);
+		if(res == NULL)
+			res = temp;
 		else
-			break;
-	}
-	if (carry>0 && (p->next == NULL && q->next == NULL))
+			prev->next = temp;
+		prev = temp;
+		if (l1) 
+			l1 = l1->next;
+		if(l2)
+			l2 = l2->next;
 
-		p->next = new node(carry);
-
-
-	// since both the list can of of different sizes hence we need this code;
-	// list 1 is over
-	if(p == NULL)
-	{
-		while(q->next && carry >0)
-		{
-			q->data = q->data+carry;
-			carry = q->data/10;
-			q->data = q->data%10;
-			q = q->next;
-		}
-		//only carry is left;
-		if(carry >0)
-		{
-			q->data = q->data+carry;
-			if(q->data >= 10)
-			{
-				//need to create another node to accomodate the other digit 
-				q->next = new node(q->data/10);
-				q->data = q->data%10;
-			}
-
-		}
-		return l2;
 	}
 
-	// list 2 is over
-
-	if( q == NULL)
-	{
-		while (p->next && carry >0)
-		{
-			p->data = p->data+carry;
-			carry = p->data/10;
-			p->data = p->data%10;
-			p = p->next;
-		}
-		if(carry >0)
-		{
-			p->data = p->data+carry;
-			if(p->data >= 10)
-			{
-				p->next = new node(p->data/10);
-				p->data = p->data%10;
-			}
-		}
-		return l1;
-	}
-
- return l1;
+	if(carry >0)
+		temp->next = new node(carry);
+	return res;
 }
 
 
@@ -131,12 +85,13 @@ cout << endl;
 int main()
 {
 
-	int arr1[4] = {2,6,5,4};
-	int arr2[3] = {8,1,2};
+	int arr1[1] = {0};
+	int arr2[2] = {7,3};
 
-	node* l1 = createlist(arr1,4);
-	node* l2 = createlist(arr2,3);
-
+	node* l1 = createlist(arr1,1);
+	node* l2 = createlist(arr2,2);
+	//printList(l1);
+	//printList(l2);
 	node* l3 = sumlist(l1,l2);
 	printList(l3);
 
