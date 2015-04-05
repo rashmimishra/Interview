@@ -16,7 +16,7 @@ void sortcolors(int arr[] , int n)
 			temp[2]++;
 	}
 
-	printf("%d\n%d\n%d\n",temp[0],temp[1],temp[2]);
+	//printf("%d\n%d\n%d\n",temp[0],temp[1],temp[2]);
 
 	for (int i =0;i<temp[0];++i)
 	{

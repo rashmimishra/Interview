@@ -44,7 +44,7 @@ node* createlist(int arr[], int n)
 	return head;
 
 }
-/*
+
 void printlist(node* head)
 {
 	if(head == NULL)
@@ -56,8 +56,19 @@ void printlist(node* head)
 
 	}
 	cout<<endl;
-}*/
+}
 
+int linklength(node* head)
+{
+  int len = 0;
+  if (head == NULL) return 0;
+   while (head)
+   {
+       len++;
+       head = head->next;
+   }
+   return len;
+}
 
 
 int main()
@@ -69,10 +80,13 @@ int main()
 	for (int i=0;i<n;++i)
 		cin>>arr[i];
 	node* l1= createlist(arr,n);
+	printlist(l1);
+	int length = linklength(l1);
+	cout<<length<<endl;
 	//creating the loop
-	l1->next->next->next->next->next = l1->next->next;
-	bool is_cycle = hascycle(l1);
-	cout<<hascycle<<endl;
+	//l1->next->next->next->next->next = l1->next->next;
+	//bool is_cycle = hascycle(l1);
+	//cout<<is_cycle<<endl;
 
 
 	return 0;

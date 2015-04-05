@@ -9,10 +9,10 @@
 
  using namespace std;
 
- //#define ROWS 4
- //#define COLS 4
+ # define ROWS 4
+ # define COLS 4
 
- int max_coins(int arr[4][4] , int ROWS, int COLS) 
+ int max_coins(int arr[][COLS] , int ROWS, int COLS) 
  {
   	//Creating memory 2-D array
    	int mem[ROWS+1][COLS+1] ;
@@ -47,7 +47,7 @@
 
 int main()
 {
-	int arr[4][4];
+	int arr[ROWS][COLS];
 	for (int i = 0;i<4;++i)
 	{
 		for (int j=0;j<4;++j)
@@ -57,7 +57,7 @@ int main()
 		}
 	}
 
-	int res = max_coins(arr,4,4);
+	int res = max_coins(arr,ROWS,COLS);
 
 	printf("%d\n",res);
 }

@@ -26,7 +26,7 @@ public:
 	 	ListNode* temp = head;
 	 	while (temp != NULL && temp->next != NULL)
 	 	{
-	 		swap(temp,temp->next);
+	 		swap(&temp->data,&temp->next->data);
 	 		temp = temp->next->next;
 	 	}
 	 	retun head;
